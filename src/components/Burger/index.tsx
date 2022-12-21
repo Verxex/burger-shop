@@ -14,6 +14,8 @@ const Burger: React.FC<{ index: number }> = ({ index }) => {
   React.useEffect(() => {
     if (currentBurger?.status === 'unavailable') {
       setisAvailable(false);
+    } else {
+      setisAvailable(true);
     }
   }, [currentBurger]);
 

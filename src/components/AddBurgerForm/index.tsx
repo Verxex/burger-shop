@@ -18,7 +18,7 @@ const AddBurgersForm: React.FC = () => {
     const burger: burgerType = {
       name: nameRef.current?.value || '',
       price: Number(priceRef.current?.value || 0) || 0,
-      status: statusRef.current?.value === 'available' ? 'available' : 'unavailable',
+      status: statusRef.current?.value === 'unavailable' ? 'unavailable' : 'available',
       desc: descRef.current?.value || '',
       image: imageRef.current?.value || '',
       id: lengthBurgers,
@@ -44,8 +44,8 @@ const AddBurgersForm: React.FC = () => {
       <select
         ref={statusRef}
         className={style.status}>
-        <option value="availible">Доступно</option>
-        <option value="unavailible">Убрать из меню</option>
+        <option value="available">Доступно</option>
+        <option value="unavailable">Убрать из меню</option>
       </select>
       <textarea
         ref={descRef}

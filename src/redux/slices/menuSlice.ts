@@ -22,6 +22,7 @@ export const menuSlice = createSlice({
         modifyBurger.name = action.payload.name;
         modifyBurger.image = action.payload.image;
         modifyBurger.desc = action.payload.desc;
+        modifyBurger.price = action.payload.price;
         modifyBurger.status = action.payload.status;
       }
     },

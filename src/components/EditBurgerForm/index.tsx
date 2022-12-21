@@ -17,10 +17,7 @@ const EditBurgerForm: React.FC<{ index: number }> = ({ index }) => {
     dispatch(
       updateBurger({
         ...CurrentBurger,
-        [event.target.name]:
-          event.currentTarget.name === 'price'
-            ? parseFloat(event.currentTarget.value)
-            : event.currentTarget.value,
+        [event.target.name]: event.currentTarget.value,
       }),
     );
   };
@@ -36,30 +33,31 @@ const EditBurgerForm: React.FC<{ index: number }> = ({ index }) => {
       <input
         onChange={handleChange}
         name="name"
-        value={CurrentBurger?.name}
+        value={CurrentBurger.name}
       />
       <input
         onChange={handleChange}
         name="price"
-        value={CurrentBurger?.price}
+        type="number"
+        value={CurrentBurger.price}
       />
       <select
         onChange={handleChange}
         name="status"
         className={style.status}
-        value={CurrentBurger?.status}>
-        <option value="availible">Доступно</option>
-        <option value="unavailible">Убрать из меню</option>
+        value={CurrentBurger.status}>
+        <option value="available">Доступно</option>
+        <option value="unavailable">Убрать из меню</option>
       </select>
       <textarea
         onChange={handleChange}
         name="desc"
-        value={CurrentBurger?.desc}
+        value={CurrentBurger.desc}
       />
       <input
         onChange={handleChange}
         name="image"
-        value={CurrentBurger?.image}
+        value={CurrentBurger.image}
       />
       <button onClick={onClickDelete}>Удалить из меню </button>
     </div>

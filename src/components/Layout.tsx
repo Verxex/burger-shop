@@ -8,16 +8,16 @@ function Layout() {
     <Routes>
       <Route
         path="/"
-        element={<Landing />}>
-        <Route
-          path="/restaurant/:restaurantId"
-          element={<App />}
-        />
-        <Route
-          path="*"
-          element={<NotFound />}
-        />
-      </Route>
+        element={<Landing />}
+      />
+      <Route
+        path="/restaurant/:restaurantId"
+        element={<App />}
+      />
+      <Route
+        path="*"
+        element={<NotFound />}
+      />
     </Routes>
   );
 }

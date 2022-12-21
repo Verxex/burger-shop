@@ -4,13 +4,11 @@ import { burgerType, RootState } from '../store';
 interface orderSliceState {
   burgers: burgerType[];
   totalCoast: number;
-  totalCount: number;
 }
 
 const initialState: orderSliceState = {
   burgers: [],
   totalCoast: 0,
-  totalCount: 0,
 };
 
 export const orderSlice = createSlice({
@@ -46,7 +44,7 @@ export const orderSlice = createSlice({
       }, 0);
     },
     removeOfOrder: (state, action: PayloadAction<number>) => {
-      state.burgers = state.burgers.filter((obj) => obj.id === action.payload);
+      state.burgers = state.burgers.filter((obj) => obj.id !== action.payload);
       state.totalCoast = state.burgers.reduce((sum, obj) => {
         if (obj.count !== undefined) {
           return sum + obj.price * obj.count;
